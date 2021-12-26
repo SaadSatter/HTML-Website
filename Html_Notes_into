@@ -1,0 +1,134 @@
+HTML Notes: 
+**Open ur website by clicking the index inside file explorer, 
+    Or copy file path to browser
+**Although some styling options are available in HTML via attributes 
+    you should refrain from using them and only style with CSS and JS
+<center> - centers all elements below it
+<h#></h#>- is to make headers
+    they get smaller for higher numbers 
+<br>- this is a new line command that is within or outside of other tags
+    ex. <h2>By <br> Saad Satter </h2>
+<hr>- this creates a horizontal line
+<!-- --> : this is how to make comments in html
+HTML Attributes:
+    Attributes allow to give more information to the browser to give 
+    modification. Go to the documentation to see what modifications are allowed
+    Ex.
+        <hr size = "3" noshade>
+
+index.html : for a full html website, it indicates the main page 
+
+<!DOCTYPE html> : tells the browser what html and file is being used 
+<html></html> : tells the browser that everything in it is html
+<head></head> : anything in here will not be displayed in the website
+    instead it gives information about the website such as title and meta
+<title></title> : this is NOT domain name, this is NOT text, 
+    this is simply the name of the website you'll on top of the tab
+
+<meta>: tags always go inside the <head> element, and are
+ typically used to specify character set, page description, keywords, 
+ author of the document, and viewport settings.
+    <meta charset = ""> : tells the browser the type of text that is 
+        allowed on the website. This is important when dealing with 
+        different languages as different languages have a different set of 
+        standard symbols. 
+        "utf-8" is standard unicode, works for a lot of symbols and emoji
+    <meta description = ""> : tells the browser the description for the
+        website when looking it up on google and stuff
+
+<body></body> : this is where text and stuff can be displayed 
+<p></p> : the p tag is a paragraph tag that makes a new line and groups 
+    texts
+
+<em></em> vs <i></i> : visually the same but em gives more emphasis 
+    and conveys more information, therefore it is better to use
+    **Same applies with <strong></strong> vs <b></b> for bold
+
+Lists:
+    SIMPLE: Simplest is using the ul tag to tell the browser that the 
+    contents within the tag is a list, and the li tag is each bullet point of the 
+    list 
+        Ex.
+        <ul> : ul means unordered list so it uses bullet points
+            <li></li>  : li means list
+            <li></li>
+        </ul>
+        NESTED: 
+        <ul>
+            <li>
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+        Ordered: uses 1. 2. 3. style as a list by default, but you can
+            use the type attribute to change the ordered style. 
+            You can also use the start attribute to determine which 
+            number it should start at
+            You can also mix types of list
+        Ex.
+        <ol type = "A" start = "C">
+           <li>
+                <ul>
+                    <li></li>
+                </ul>
+           </li> 
+        </ol>
+<img src="" alt=""> : The src is the image address from online 
+    OR You can put an image in the same folder of your project and
+    give the file name
+        and the
+        alt attribute displays a text when the image cannot be rendered 
+        by the website
+
+<a href=""></a> : anchor tag that links a text to a hyper link
+        The href attribute is the url to the link
+        ex. <a href="https://animixplay.to/anime/48556/Takt_Op_Destiny">
+            Takt Infinity
+        </a>
+
+Tables: used to make cleaner structures
+<table></table> : The table tag can help structure your text into columns
+        and boxes and you can remove the border for an overall cleaner 
+        look
+        <tr></tr> : table row and structures by default top to bottom
+        <td></td> : table data or table cell element which is placed
+            in columns by default form left to right
+        <th></th> : table header, gives a header for columns
+        Modularize Your Table: Theoretically you can make your rows and
+            cells and header and footer all in the same <table></table>
+            element, but you want to modularize it so that you can style
+            the head and body and footer differently if you so choose
+        <thead></thead> : header for the table and within it you can
+            make the individual column heads using <th></th>
+        <tbody></tbody>: table body 
+        <tfoot></tfoot> : table footer
+
+Forms: Forms can take in information but html is only for structure, 
+        therefore it cannot do anything on its own for the functionality
+        of a form. It can place a form and take in input but JS is needed
+        to make any use of it.
+        <form action="" class="" method=""></form>: the form tag doesn't
+            display anything, it is simply the body for holding the form 
+        <label for="">Mylabel</label>: this is the label for your question.
+            Labels and inputs are all on the same line by default
+        <input type="text"> : this shows that you will take in an input for 
+            your form. The type attribute specifies that it is a text.
+        <input type="submit"> : the submit type generates a submit button
+            next to the input
+        types: different types of input 
+            text : takes in a string 
+            submit : a submit button input
+            color: prompts a color wheel to choose a color 
+            checkbox: shows a checkbox
+            password: anything typed in here is masked 
+            email: they can write in an email
+            file: allows user to upload a file
+        <textarea name="" id="" cols="30" rows="10"></textarea>:
+            gives the user an area of text to write a message. You can 
+            change the area of the message by rows and cols
+
+
+
+
+    
