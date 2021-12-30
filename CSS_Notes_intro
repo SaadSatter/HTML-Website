@@ -1,0 +1,238 @@
+**IF VSCode ever stops autofilling, you can go to bottom right of the file
+    and check the language it is utilizing
+    Ex. Plain text vs HTML vs CSS 
+
+Inline CSS: Inline CSS is CSS that is inbedded into html code. By using style
+    attribute we can write css for tags.
+    You can look at background-color and other inline CSS property in 
+    MDN website
+
+    EX. <body style="background-color: blueviolet;"></body>
+    whether you can use keyword or hex value for color can be found in 
+    CSS colors in MDN, also use colorhunt to find interesting colors
+
+Internal CSS: Internal CSS is still within the html file, but utilizes 
+    <style></style> tag to allow css code within the <head></head> of 
+    the html file. Although this helps to modularize the code within 
+    your current file, it will not modularize your code across all 
+    html files in your project.
+    <style></style>: this tag is to write CSS code and modularize styling
+        for html. IT MUST BE IN THE <head></head> tag to work.
+
+    Syntax:
+    /* */ : this is to comment in CSS
+    tagName { //this is the body of the tag where you can put the styles
+        styleModifier(like): ;
+    }
+    EX.
+    <head>
+        <style>
+            
+            /* This is now CSS code */
+            body{
+                background-color: #97BFB4;
+            }
+        </style>
+    </head>
+
+
+
+External CSS: Create a new folder called CSS, and a new file called
+    styles.css, this is important like how index.html is read in the 
+    browser so does style.css. 
+    By making your code external, your html files can access your CSS 
+    all from the same file if you so choose. This further modularizes 
+    your code.
+
+    **It is important to note that this is the least priority between the 
+        three types of CSS. 
+        In other words, if you want to appy a general CSS to all files,
+        this is the best way to do it, but on top of that, you can add 
+        Internal CSS to individual files to make them specialized.
+        YOU SHOULD APPLY ALL STYLES AS EXTERNAL AS POSSIBLE
+
+    <link rel="stylesheet" href="CSS/styles.css"> : Put this tag in the
+        header, the rel or relation attribute tells the browser that 
+        this link is referring to the styles of the html file it is 
+        looking at. The href tells the browser where to find the css file 
+        for the html file.
+
+
+
+General CSS Notes:
+    Default CSS: Every browser has a default CSS for elements this
+        especially affects <hr> element and by writing your own style,
+        it overrides the default
+        Ex. border-style is an attribute by default inset 
+            and height is 1px. You need a height of 2px to see the line
+
+    CSS Syntax: 
+        0.1. /* */ : this is to comment in CSS
+        1. selector{property:value;} : This is the skeletal model of the CSS code.
+            There is a selector followed by curly braces and then a property 
+            and lastly a value. The pair of property and value are the set 
+            of rules for the element.
+        
+            selector: The beginning of the CSS rule, it tells the "who". 
+                Who are you going to change? Which element? the body tag?
+                hr? p? img? It specifies the element type you are changing
+
+                i. Be mindful that you can specify your selector to more 
+                    than just the tag name, what if you want specific h1 tags
+                    in the browser to act a certain way?
+                
+                ii. To specify a selector more specific than a tag, you should
+                    use CLASS or ID selectors.
+                    ex. <img class="bacon" id= "bacon" src="" alt="" >
+
+            property: This is the "what". What about the element are you 
+                going to change? The color? The background? The height?
+                The position? etc.
+            
+            value: This tells you the "how". This will tell you how do you 
+                want to change the property? Do you want it to be blue? red?
+                certain amount of px?
+        
+        2. In general the syntax errors should be caught by VSCode.
+
+        3. Selectors are your elements, but your properties can be found online 
+            and the same goes for the associated values.
+        4. Common conventions: the rules should be listed vertically and the 
+            properties should be listed in alphabetical 
+        <style>
+            h1{
+                color: purple;
+                font: optional;
+            }
+        </style>
+
+        5. Class Selectors: more specified and customized selectors. 
+                If you give a tag a class but never use it in the CSS,
+                then the style will default to the tag to use as the selector.
+                i.e. Class just has a higher priority 
+            **make sure you are spelling things correctly to match the html
+                1. Note that you can add multiple class names to the same html 
+                    element seperated by spaces. 
+                    ex. <hr class="jekyll hyde"> in this case, "jekyll" is a class 
+                        name and so is "hyde". You can then modify hr as a jekyll 
+                        and as a hyde.
+            ex. 
+                <style>
+                    .className{
+
+                    }
+                </style>
+        
+        6. ID Selectors: These selectors are very similar to Class and their 
+                purpose are similar BUT different syntax. It is still more 
+                in priority than the tag and it is more in priority than CLASS
+                for the CSS to determine which style to use.
+                
+                1. Although ID has more priority, it must be unique throughout 
+                the page. i.e. only one instance of an id name can be used in 
+                a given html file. This is a convention!!
+                
+                2. Unlike classes, only one id can be associated with an html
+                    element at a time. i.e. spaces are part of the id
+                    ex. <hr id="jekyll hyde"> in this case "jekyll hyde" is
+                        an invalid id and therefore the browser wont find it.
+
+                ex.
+                <style>
+                    #id{
+
+                    }
+                </style>
+            
+        7. Pseudo Classes: These classes have a ":className" and can be 
+            supplementary classes for regular classes. They are more for 
+            action based such as "how does my style change if I hover?" 
+
+            NOTE: That using a pseudo class on an html tag selector will 
+                affect all of the same tags whether they use tags as a 
+                selector or class, BUT it will not affect those that have an 
+                ID. If you use an ID for an element, you have to make the 
+                pseudo class for the id separately. 
+            ex.
+            <style>
+                .className:hover{
+
+                }
+
+                :hover{
+
+                }
+
+                #id:hover{
+
+                }
+            </style>
+        
+        8. Keep in mind that CSS overrides on a priority scale of the selectors 
+                as provided. But it only overrides the property used in higher 
+                priority. In other words, if color property is used in id, 
+                then ONLY the color property is overridden, and if the class 
+                had color and background then the background remains 
+
+        
+    DEBUGGING CSS: 
+        1.Utilize the chrome developer tool, go to the 3 dots on the 
+            top right and then more tools and then developer tools.
+
+        2. Go to console and check for error popups
+            i. in debug problem 1, it says FILE_NOT_FOUND and what file it is
+                is looking for. It shows that the /css/styles.css file path 
+                is invalid. You must use css/styles.css
+
+        3. Identify the location of the problem
+            i. Is it all the css styles messed up? i.e. body, hr, headers etc.
+                a. Then it probably is an issue with getting the css file, 
+                    check the console 
+            ii. Do some elements follow while others don't? i.e. hr and h1 
+                elements are in the proper css but body or table is not.
+                a. The css file was found, but check the specific elements in 
+                    the element tab of developer tools. If you click on an 
+                    element it shows all the CSS applied to it. 
+
+        4. Priority check: Inline CSS, Internal CSS, and External CSS can 
+            all be used for one element. The browser by default will take 
+            the inline and deprecate the rest, if there is no Inline CSS 
+            then it will take Internal CSS, and lastly External CSS.
+            i.e. Importance List 
+            1.Inline CSS 
+            2.Internal CSS 
+            3.External CSS
+        
+        5. Using the Chrome Developer Tools you can edit the html and CSS 
+            of your code however it will not change the actual code so when 
+            you refresh, it will revert back to what it was when it first loaded
+
+
+
+    USE PERCENT: Percentages can change to window size while pixels can't
+
+    Applying multiple parameters: Some attributes allow for multiple
+        parameters.
+        EX. boarder-style allows you to specify the style on each wall 
+                of the border.
+            <style>
+                hr{ /* it is ordered from top right bottom left*/
+                    border-style: dotted dashed solid none;
+                }
+            </style>
+        OR you can apply a general paramter and override it with specific
+            ones.
+        Ex. This example, all walls are set to none, but the top is then 
+                overriden with a dotted style.
+                style
+        <style>
+            hr{ /* it is ordered from top right bottom left*/
+                border-style: none;
+                border-top-style: dotted; 
+            }
+        </style>
+
+        
+
+
+        

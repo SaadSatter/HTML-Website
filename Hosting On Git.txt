@@ -1,0 +1,25 @@
+To Host on GitHub follow these steps TO THE DOT:
+1. Make new Repository
+2. Give your repository a name 
+3. Make it public
+4. add a readme (nothing has to be in it but has to exist)
+5. Hit the add files button and upload files 
+7. Go to your website folder in your local computer 
+8. Copy all the individual files and upload it 
+9. go to settings of your repository
+10. Go to pages 
+11. Go to Source and click None 
+12. Set the source to main 
+13. save 
+14. wait 30min for GitHub to set it up 
+    *if you don't you will see a 404 error which is fine, it just means
+        you need to wait longer
+
+Updating your site?
+1. Add files 
+2. Commit files (it will automatically replace same file names)
+3. GO back to pages and change source to NONE 
+4. Save 
+5. Change source back to main 
+6. Save 
+7. Wait
